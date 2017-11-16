@@ -12,18 +12,16 @@ class CreateProyectosTable extends Migration
      */
     public function up()
     {
-              Schema::create('proyecto', function (Blueprint $table) {
-            $table->increments('idProyecto');
-            $table->string('nombre')->unique();
-            $table->string('colaboradores');
+              Schema::create('projects', function (Blueprint $table) {
+            $table->increments('id');
+            $table->string('name')->unique();
             $table->string('admin');
-           
         });
-         
-       
+
+
     }
 
-    
+
     public function down()
     {
         Schema::drop('proyectos');

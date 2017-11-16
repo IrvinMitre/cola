@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateAreasTable extends Migration
+class CreateColaboradoresTable extends Migration
 {
     /**
      * Run the migrations.
@@ -12,16 +12,13 @@ class CreateAreasTable extends Migration
      */
     public function up()
     {
-        Schema::create('codes', function (Blueprint $table) {
-           $table->increments('id');
-            $table->integer('idNext')->nullable();
+        Schema::create('collaborators', function (Blueprint $table) {
+            $table->increments('idCollaborator');
             $table->integer('idProject')->unsigned();
             $table->integer('idUser')->unsigned();
-            $table->string('code',3000);
-            $table->dateTime('created_at');
+            $table->timestamps();
             $table->foreign('idProject')->references('id')->on('projects')->onDelete('cascade');
             $table->foreign('idUser')->references('id')->on('users')->onDelete('cascade');
-
         });
     }
 
@@ -32,6 +29,6 @@ class CreateAreasTable extends Migration
      */
     public function down()
     {
-        Schema::drop('areas');
+        Schema::drop('colaboradores');
     }
 }
