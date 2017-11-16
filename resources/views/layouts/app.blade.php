@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Laravel</title>
+    <title>Team7</title>
 
     <!-- Fonts -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css" integrity="sha384-XdYbMnZ/QjLh6iI4ogqCTaIjrFk87ip+ekIjefZch0Y+PvJ8CDYtEs1ipDmPorQ+" crossorigin="anonymous">
@@ -16,17 +16,41 @@
     {{-- <link href="{{ elixir('css/app.css') }}" rel="stylesheet"> --}}
 
     <style>
-        body {
-            font-family: 'Lato';
-        }
 
-        .fa-btn {
-            margin-right: 6px;
-        }
+      footer {
+        background-color: #A61520;
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        height: 40px;
+      }
+
+      footer>div>p{
+        color:#FFFFFF;
+      }
+      body {
+        font-family: 'Lato';
+      }
+
+      .fa-btn {
+        margin-right: 6px;
+      }
+
+      .navbar-header a {
+        color: #FFFFFF;
+      }
+
+      .nav>li>a{
+        color: #FFFFFF;
+      }
+
+      .nav>li>a:hover{
+        color: #000000;
+      }
     </style>
 </head>
-<body id="app-layout">
-    <nav class="navbar navbar-default navbar-static-top">
+<body id="app-layout" style="background-color: #F4F4F4;">
+    <nav class="navbar navbar-light" style="background-color: #A61520;">
         <div class="container">
             <div class="navbar-header">
 
@@ -39,8 +63,8 @@
                 </button>
 
                 <!-- Branding Image -->
-                <a class="navbar-brand" href="{{ url('/') }}">
-                    Laravel
+                <a class="navbar-brand" href="{{ url('/') }}" color="#000000">
+                    Team7
                 </a>
             </div>
 
@@ -54,8 +78,8 @@
                 <ul class="nav navbar-nav navbar-right">
                     <!-- Authentication Links -->
                     @if (Auth::guest())
-                        <li><a href="{{ url('/login') }}">Iniciar Sesión</a></li>
-                        <li><a href="{{ url('/register') }}">Registrarse</a></li>
+                        <li><a href="{{ url('/login') }}">Entrar</a></li>
+                        <li><a href="{{ url('/register') }}">Registrar</a></li>
                     @else
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
@@ -64,6 +88,7 @@
 
                             <ul class="dropdown-menu" role="menu">
                                 <li><a href="{{ url('/logout') }}"><i class="fa fa-btn fa-sign-out"></i>Logout</a></li>
+                                <li><a href="{{ url('/perfil') }}">Perfil</a></li>
                             </ul>
                         </li>
                     @endif
@@ -74,6 +99,15 @@
 
     @yield('content')
 
+    <footer style="padding-bottom: 0;">
+
+        </div>
+            <div align="center" class="links de contacto col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                <p>Powered by Team7 &copy; 2017</p>
+            </div>
+        </font>
+    </div>
+  </footer>
     <!-- JavaScripts -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.3/jquery.min.js" integrity="sha384-I6F5OKECLVtK/BL+8iSLDEHowSAfUo76ZL9+kGAgTRdiByINKJaqTPH/QVNS1VDb" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
